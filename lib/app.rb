@@ -10,6 +10,8 @@ class Birthday < Sinatra::Base
   post "/personal_info" do
     session[:name] = params["name"]
     session[:day] = params["day"]
+    session[:month] = params["month"]
+    session[:year] = params["year"]
     redirect "/results"
   end
 
