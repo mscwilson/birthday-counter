@@ -17,9 +17,8 @@ feature "index page" do
     fill_in "name", with: "Ace"
     select("5", from: "day")
     select("July", from: "month")
-    select("2011", from: "year")
     click_button "Tell me!"
-    expect(page).to have_content "5 July 2011"
+    expect(page).to have_content "5 July"
   end
 
 

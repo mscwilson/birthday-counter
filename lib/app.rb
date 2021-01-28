@@ -11,7 +11,6 @@ class Birthday < Sinatra::Base
     session[:name] = params["name"]
     session[:day] = params["day"]
     session[:month] = params["month"]
-    session[:year] = params["year"]
     redirect "/results"
   end
 
