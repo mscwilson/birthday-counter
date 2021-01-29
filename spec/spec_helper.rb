@@ -3,6 +3,7 @@ require_relative "../lib/app.rb"
 require "capybara"
 require "capybara/rspec"
 require "rspec"
+require "web_helpers"
 
 Capybara.app = Birthday
 

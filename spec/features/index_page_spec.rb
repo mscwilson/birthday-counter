@@ -7,27 +7,15 @@ feature "index page" do
     expect(page).to have_content "How long do I have to wait until my birthday?"
   end
 
-  scenario "enter a name" do
-    visit "/"
-    fill_in "name", with: "Ace"
-    click_button "Tell me!"
+  scenario "enter a name and date" do
+    visit_index_page_and_enter_name
+    fill_in_a_date_and_submit
     expect(page).to have_content "Ace"
   end
 
-  scenario "enter a date" do
+  scenario "says stranger if name not entered" do
     visit "/"
-    fill_in "name", with: "Ace"
-    select("5", from: "day")
-    select("July", from: "month")
-    click_button "Tell me!"
-    expect(page).to have_content "Ace"
-  end
-
-  scenario "deals appropriately if name not entered" do
-    visit "/"
-    select("5", from: "day")
-    select("July", from: "month")
-    click_button "Tell me!"
+    fill_in_a_date_and_submit
     expect(page).to have_content "stranger"
   end
 

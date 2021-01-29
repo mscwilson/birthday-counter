@@ -12,11 +12,11 @@ class BirthdayCounter
 
   def today?
     now = Date.today
-    (@birthdate.day == now.day) && (@birthdate.month == now.month) 
+    (birthdate.day == now.day) && (birthdate.month == now.month) 
   end
 
   def days_until(added_year = 0)
-    days = (@birthdate.next_year(added_year) - Date.today).to_i
+    days = (birthdate.next_year(added_year) - Date.today).to_i
     days >= 0 ? days : days_until(1)
   end
 
