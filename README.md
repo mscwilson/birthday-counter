@@ -18,11 +18,11 @@ The app is built in the MVC pattern.
 * There is one controller class (Birthday, in `app.rb`) which contains the Sinatra HTML routes.
 * There are two view .erb files. The index page has a form with a box to fill in the user's name, and dropdowns for choosing birth day and month. The results.erb page displays two messages based on when the birthday is. There's no logic on this page, the model returns the right messages for it.
 * I used `sessions` to save the form data so they can be accessed in different routes.
-* The model (BirthdayCounter) uses the saved session name, day and month, along with the current year, to make a Date object.
+* The model (BirthdayCounter) uses the saved session day and month, along with the current year, to make a Date object.
 * BirthdayCounter checks if the birthday is today and calculates the days until the birthday, and the appropriate messages based on these.
 
 ### Code highlight
-I find that using Dates, Times, or Datetimes is complicated and confusing. Especially when there is a mix of month numbers and names involved. It took a while to get the calculation part of the model working, so I was particularly pleased with this method, which takes advantage of the `next_year` method for Date objects:
+Using Dates, Times, or Datetimes can be complicated and confusing. Especially when there is a mix of month numbers and names involved. It took me a while to get the calculation part of the model working, so I was particularly pleased with this method, which takes advantage of the `next_year` method for Date objects:
 ```ruby
   def days_until(added_year = 0)
     days = (birthdate.next_year(added_year) - Date.today).to_i
