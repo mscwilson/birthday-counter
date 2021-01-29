@@ -49,7 +49,6 @@ describe BirthdayCounter do
     it "tells how many days to wait" do
       expect(@birthday.closing_message).to eq "Your birthday is in 4 days"
     end
-
   end
 
   describe "birthday is not for ages" do
@@ -65,8 +64,6 @@ describe BirthdayCounter do
     it "opening message is bad news" do
       expect(@birthday.opening_message).to eq "Bad news"
     end
-
   end
-
 
 end

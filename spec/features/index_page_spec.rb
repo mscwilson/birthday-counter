@@ -1,3 +1,5 @@
+require "date"
+
 feature "index page" do 
 
   scenario "shows a welcome message" do
@@ -18,7 +20,7 @@ feature "index page" do
     select("5", from: "day")
     select("July", from: "month")
     click_button "Tell me!"
-    expect(page).to have_content "5 July"
+    expect(page).to have_content "Ace"
   end
 
 

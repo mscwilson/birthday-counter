@@ -1,1 +1,5 @@
-<%= session[:name] %> <%= session[:day] %> <%= session[:month] %>
+<%= @birthday_greeter.opening_message %>, <%= session[:name] %>!
+
+<br>
+
+<%= @birthday_greeter.closing_message %>.

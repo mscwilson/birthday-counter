@@ -1,4 +1,6 @@
 require "sinatra/base"
+require_relative "birthday_counter"
+# require "date"
 
 class Birthday < Sinatra::Base
   enable :sessions
@@ -8,6 +10,7 @@ class Birthday < Sinatra::Base
   end
 
   post "/personal_info" do
+    p params
     session[:name] = params["name"]
     session[:day] = params["day"]
     session[:month] = params["month"]
@@ -15,6 +18,9 @@ class Birthday < Sinatra::Base
   end
 
   get "/results" do
+    p session[:day]
+    p session[:month]
+    @birthday_greeter = BirthdayCounter.new(session[:day], session[:month])
     erb :results
   end
 

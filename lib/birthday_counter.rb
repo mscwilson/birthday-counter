@@ -5,6 +5,7 @@ class BirthdayCounter
   attr_reader :birthdate
 
   def initialize(day, month)
+    @today = Date.new(2021, 3, 5)
     @birthdate = Date.new(Date.today.year, month.to_i, day.to_i)
 
   end
@@ -27,7 +28,6 @@ class BirthdayCounter
   def closing_message
     return "Have a lovely day" if today?
     "Your birthday is in #{days_until} days"
-
   end
 
 end
