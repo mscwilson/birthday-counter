@@ -22,8 +22,12 @@ describe BirthdayCounter do
       expect(birthday).to be_today
     end
 
-    it "message is happy birthday if it's today" do
-      expect(birthday.message).to eq "Happy birthday"
+    it "opening message is happy birthday" do
+      expect(birthday.opening_message).to eq "Happy birthday"
+    end
+
+    it "doesn't say how many days it is for closing message" do
+      expect(birthday.closing_message).to eq "Have a lovely day"
     end
   end
 
@@ -38,9 +42,14 @@ describe BirthdayCounter do
       expect(@birthday.days_until).to eq 4
     end
 
-    it "message is good news if the birthday is soon" do
-      expect(@birthday.message).to eq "Good news"
-    end 
+    it "opening message is good news if the birthday is soon" do
+      expect(@birthday.opening_message).to eq "Good news"
+    end
+
+    it "tells how many days to wait" do
+      expect(@birthday.closing_message).to eq "Your birthday is in 4 days"
+    end
+
   end
 
   describe "birthday is not for ages" do
@@ -53,8 +62,8 @@ describe BirthdayCounter do
       expect(@birthday.days_until).to eq 335
     end
 
-    it "message is bad news" do
-      expect(@birthday.message).to eq "Bad news"
+    it "opening message is bad news" do
+      expect(@birthday.opening_message).to eq "Bad news"
     end
 
   end
