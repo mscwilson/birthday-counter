@@ -4,7 +4,7 @@ This very simple app tells you how many days you have to wait until your birthda
 
 This was a bonus challenge for week 3 of the [Makers Academy](https://makers.tech/) bootcamp.  It's written in Ruby using the Sinatra web framework. The tests are written in Rspec and Capybara. <strong>No further development is likely for this project</strong>, it was just made to practise with Sinatra.
 
-If you don't give a name, it will call you "stranger". I decided that the cut off for bad news/good news for impending birthday was 40 days. This of course makes a big assumption that a birthday is something the user is looking forward to. It could be fun sometime to add a second side to the app, with all different wording, for birthday-dislikers.
+I decided that the cut off for bad news/good news for impending birthday was 40 days. This of course makes a big assumption that a birthday is something the user is looking forward to. It could be fun sometime to add a second side to the app, with all different wording, for birthday-dislikers.
 
 
 It looks like this:
@@ -17,6 +17,7 @@ It looks like this:
 The app is built in the MVC pattern.
 * There is one controller class (Birthday, in `app.rb`) which contains the Sinatra HTML routes.
 * There are two view .erb files. The index page has a form with a box to fill in the user's name, and dropdowns for choosing birth day and month. The results.erb page displays two messages based on when the birthday is. There's no logic on this page, the model returns the right messages for it.
+* If you don't give a name, it will call you "stranger". 
 * I used `sessions` to save the form data so they can be accessed in different routes.
 * The model (BirthdayCounter) uses the saved session day and month, along with the current year, to make a Date object.
 * BirthdayCounter checks if the birthday is today and calculates the days until the birthday, and the appropriate messages based on these.
