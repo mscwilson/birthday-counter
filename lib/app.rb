@@ -10,16 +10,17 @@ class Birthday < Sinatra::Base
   end
 
   post "/personal_info" do
-    p params
-    session[:name] = params["name"]
+    if params[:name].empty?
+      session[:name] = "stranger"
+    else
+      session[:name] = params["name"]
+    end
     session[:day] = params["day"]
     session[:month] = params["month"]
     redirect "/results"
   end
 
   get "/results" do
-    p session[:day]
-    p session[:month]
     @birthday_greeter = BirthdayCounter.new(session[:day], session[:month])
     erb :results
   end

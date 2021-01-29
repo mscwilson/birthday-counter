@@ -23,5 +23,13 @@ feature "index page" do
     expect(page).to have_content "Ace"
   end
 
+  scenario "deals appropriately if name not entered" do
+    visit "/"
+    select("5", from: "day")
+    select("July", from: "month")
+    click_button "Tell me!"
+    expect(page).to have_content "stranger"
+  end
+
 
 end
