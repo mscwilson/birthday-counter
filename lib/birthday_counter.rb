@@ -14,13 +14,14 @@ class BirthdayCounter
     (@birthdate.day == now.day) && (@birthdate.month == now.month) 
   end
 
-  def days_until
-    days = (@birthdate - Date.today).to_i
-    if days >= 0
-      days
-    else
-      365 + days
-    end
+  def days_until(added_year = 0)
+    days = (@birthdate.next_year(added_year) - Date.today).to_i
+    days >= 0 ? days : days_until(1)
+  end
+
+  def message
+    return "Happy birthday" if today?
+    days_until < 40 ? "Good news" : "Bad news"
   end
 
 end
