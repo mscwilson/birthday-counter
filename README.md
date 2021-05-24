@@ -6,7 +6,7 @@ This was a bonus challenge for week 3 of the [Makers Academy](https://makers.tec
 
 I decided that the cut off for bad news/good news for impending birthday was 40 days. This of course makes a big assumption that a birthday is something the user is looking forward to. It could be fun sometime to add a second side to the app, with all different wording, for birthday-dislikers.
 
-
+Try it out [here](https://birthday-counter-93070.herokuapp.com/).  
 It looks like this:
 ![entering details](/public/1_entering_details.png)
 ![bad news](/public/2_bad_news.png)
